@@ -1,0 +1,13 @@
+sub rangeProduct {
+    my ($x, $y) = @_;
+    my $numResult = 1;
+
+    for my $i ($x..$y) {
+        $numResult = $numResult * $i; 
+    }
+
+    return $numResult;
+}
+
+my $numTest = rangeProduct(5, 6);
+print "$numTest\n";
