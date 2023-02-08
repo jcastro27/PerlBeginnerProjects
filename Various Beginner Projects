@@ -1,0 +1,57 @@
+https://www.hackerearth.com/practice/basic-programming/input-output/basics-of-input-output/practice-problems/algorithm/cartag-948c2b02/
+print"Input plate"; 
+my $test = <STDIN>;
+
+$vowelOrNot = substr($test, 2, 1);
+
+$first  = substr($test, 0, 1);
+$second = substr($test, 1, 1);
+$fourth = substr($test, 3, 1);
+$fifth  = substr($test, 4, 1);
+$sixth  = substr($test, 5, 1);
+$eigth  = substr($test, 7, 1);
+$ninth  = substr($test, 8, 1);
+
+$sumoffirst2 = int($first + $second);
+
+$sumOf4thAnd5th = int($fourth + $fifth);
+
+$sumOf5thAnd6th = int($fifth + $sixth);
+
+$sumof6thAnd8th = int($sixth + $eigth);
+
+$sumof8thAnd9th = int($eigth + $ninth);
+
+if($sumoffirst2 == 3)
+{
+print "$sumoffirst2";
+}
+
+if (   $vowelOrNot eq "A"
+    || $vowelOrNot eq "E"
+    || $vowelOrNot eq "I"
+    || $vowelOrNot eq "O"
+    || $vowelOrNot eq "U"
+    || $vowelOrNot eq "Y"
+    || $sumoffirst2 % 2 == 1 && $sumOf4thAnd5th % 2 == 1 )
+{
+    print "Invalid \n";
+} else print"Valid"
+print "test" ;
+
+
+
+print "Please enter a: ";
+
+my $numA = <STDIN>;
+
+print "Please enter b: ";
+
+my $numB = <STDIN>;
+
+for($i = $numA; $i <= $numB; $i++)
+{
+    $numA = $numA * $numA;
+}
+print("$numA");
+
