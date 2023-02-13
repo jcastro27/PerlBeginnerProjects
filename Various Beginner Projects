@@ -55,3 +55,278 @@ for($i = $numA; $i <= $numB; $i++)
 }
 print("$numA");
 
+print"Enter a number: ";
+my $input = <STDIN>;
+
+my $quarters = $input / 25;
+my $mod = $input % 25;
+my $nickels = $mod / 5;
+my $mod = $nickels % 5;
+my $pennies = $mod / 1;
+
+print "quarters:" . " $quarters " . "\n";
+print "nickels: " . "$nickels " . "\n";
+print "pennies: " . "$pennies " ;
+
+sub atLeastThreeMatch{
+    my($w, $x, $y, $z) = @_;
+    if($w == $x && w == $y ){
+    return "true";
+    }
+}
+
+my $result = &atLeastThreeMatch(5,5);
+print"$result";
+
+
+sub howManyEnteredBeforeSeenBoth
+{
+    my($a, $b) = @_;
+    my $count = 0;
+    my $aBcounter = 0;
+while($aBcounter < 2)
+{
+    
+    print"Enter a number:";
+    my $num = <STDIN>;
+    $count++;
+    if($num == $a || $num == $b)
+    {
+        $aBcounter++;
+    }
+    
+    
+}
+
+print"There were $count numbers before $a and $b were both seen"
+
+}
+
+
+my @input_array = (1, 2, 3, 4, 5);
+
+my $num = sumOfOdds(@input_array);
+
+print"$num";
+
+
+sub howManyStepsToGetTo1 {
+    my $num = shift;
+    my $count = 0;
+    while ($num != 1) {
+        if ($num % 2 == 0) {
+            $num = $num / 2;
+            $count++;
+        }
+        elsif ($num % 3 == 1) {
+            $num = $num * 3 + 1;
+            $count++;
+        }
+        else {
+            last;
+        }
+    }
+    return $count;
+}
+
+my $result = howManyStepsToGetTo1(56);
+
+print"$result";
+
+sub middleValue{
+    my $num1 = shift;
+    my $num2 = shift;
+    my $num3 = shift;
+    
+    if($num1 > $num2 && $num1 < $num3 || $num1 > $num3 && $num1 < num2)
+    {
+        
+        return $num1;
+        
+    }
+    if($num2 > num1 && $num2 < $num3 || $num2 > $num3 && $num2 < num1)
+    {
+        return $num2;
+    }
+    
+    return $num3;
+    
+}
+
+
+my $result = middleValue(4,2,3);
+
+print"$result";
+
+sub canMakeATriangle{
+    $num1 = shift;
+    $num2 = shift;
+    $num3 = shift;
+    $num2Plus1 = $num1 + $num2;
+    $num3Plus1 = $num1 + $num3;
+    $num3Plus2 = $num3 + $num2;sub ar
+
+    
+    if($num1 < 0 || $num2 < 0 || $num3 < 0 && $num2Plus1 <= $num3 || $num3Plus1 <= $num2 || $num3Plus2 <= $num1 )
+    {
+        print"Cannot make a triangle";
+    }
+    else{
+    print"These CAN make a triangle";
+    }
+    
+    
+    
+    
+}
+
+canMakeATriangle(20,100,100);
+
+
+sub untilTen {
+    my $input = 0;
+    my $min = 999;
+    my $max = 0;
+while ($input != 10) {
+  print "Please enter a number: ";
+  $input = <STDIN>;
+  if($input < $min)
+  {
+      $min = $input;
+  }
+  elsif($input > $max)
+  {
+      $max = $input;
+  }
+}
+
+print"Min: $min";
+print"Max: $max"
+
+}
+
+untilTen();
+
+sub sumOfOdds{
+    
+    my(@array) = @_;
+    my $odd = 0;
+    my $even = 0;
+    foreach my $element(@array){
+        if($element % 2 == 1)
+        {
+            $odd += $element;
+        }
+         if($element % 2 == 0)
+        {
+            $even += $element;
+        }
+        
+    }
+    
+    
+    if($odd > $even)
+    {
+        print"Odds are even ";
+    return $odd;
+    }
+    elsif($even > $odd)
+    {
+        print"Evens are even ";
+    return $even;
+    }
+    
+    print"TIE ";
+    return $even;
+    
+    
+}
+
+
+my @testArray = (5,10,2,7);
+my $num = sumOfOdds(@testArray);
+
+print"$num";
+
+
+sub elementsBiggerThan{
+    my (@arr) = @_;
+    my $num = @_;
+    my $count = 0;
+    foreach $element(@arr){
+        if($element < $num)
+        {
+            $count++;
+        }
+    }
+    return $count;
+    
+}
+
+my @testArray = (4,2,1,3,9);
+my $num = elementsBiggerThan(@testArray, 0);
+print("$num")
+
+sub isPerfect{
+    my ($num) = @_;
+    my $count = 0;
+    for(my $i = 1; $i < $num; $i++){
+        if($num % $i == 0)
+        {
+            $count++;
+        }
+        
+    }
+    
+    my $flag = 0;
+    
+    if($count == $num -1)
+    {
+        $flag = 1;
+    }
+    
+    if($flag)
+    {
+     print " True\n";
+} else {
+  print "False\n";
+}
+    
+}
+
+isPerfect(20);
+
+
+sub addEvenSubOdd{
+    my (@array) = @_;
+    my $sum = 0;
+    my $even = 0;
+    my $odd = 0;
+    
+    foreach my $element(@array){
+        if($element % 2 == 1)
+        {
+            $odd += $element;
+        }
+        elsif($element % 2 == 0)
+        {
+            $even += $element;
+        }
+    }
+    
+    $sum = $even - $odd;
+    
+    return $sum;
+    
+}
+
+my @arr = (10,0,11,44,19,46);
+my $results = addEvenSubOdd(@arr);
+print"$results";
+
+
+
+
+ 
+
+
